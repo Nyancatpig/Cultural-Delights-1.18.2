@@ -1,0 +1,24 @@
+{
+  "type": "culturaldelights:mat_rolling",
+  "ingredients": [
+    {
+      "item": "minecraft:dried_kelp"
+    },
+    {
+      "item": "farmersdelight:cooked_rice"
+    },
+    {
+      "tag": "culturaldelights:cucumbers"
+    },
+    {
+      "item": "minecraft:carrot"
+    },
+    {
+      "tag": "forge:raw_fishes/cod"
+    }
+  ],
+  "output": {
+    "item": "culturaldelights:cod_maki",
+    "count": 3
+  }
+}

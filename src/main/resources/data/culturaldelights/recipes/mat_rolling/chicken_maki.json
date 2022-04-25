@@ -1,0 +1,24 @@
+{
+  "type": "culturaldelights:mat_rolling",
+  "ingredients": [
+    {
+      "item": "minecraft:dried_kelp"
+    },
+    {
+      "item": "farmersdelight:cooked_rice"
+    },
+    {
+      "tag": "culturaldelights:avocados"
+    },
+    {
+      "item": "minecraft:beetroot"
+    },
+    {
+      "tag": "forge:cooked_chicken"
+    }
+  ],
+  "output": {
+    "item": "culturaldelights:chicken_maki",
+    "count": 1
+  }
+}

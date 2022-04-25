@@ -1,0 +1,24 @@
+{
+  "type": "culturaldelights:mat_rolling",
+  "ingredients": [
+    {
+      "item": "minecraft:dried_kelp"
+    },
+    {
+      "item": "farmersdelight:cooked_rice"
+    },
+    {
+      "tag": "forge:cooked_eggs"
+    },
+    {
+      "tag": "forge:cooked_eggs"
+    },
+    {
+      "tag": "forge:cooked_eggs"
+    }
+  ],
+  "output": {
+    "item": "culturaldelights:tamago",
+    "count": 3
+  }
+}

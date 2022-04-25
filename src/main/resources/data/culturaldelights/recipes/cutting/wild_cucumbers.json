@@ -1,0 +1,21 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "culturaldelights:wild_cucumbers"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  },
+  "result": [
+    {
+      "item": "culturaldelights:cucumber"
+    },
+    {
+      "item": "minecraft:yellow_dye",
+      "count": 2,
+      "chance": 0.5
+    }
+  ]
+}

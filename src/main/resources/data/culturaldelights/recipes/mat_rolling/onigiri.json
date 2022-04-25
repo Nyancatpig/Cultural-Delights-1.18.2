@@ -1,0 +1,24 @@
+{
+  "type": "culturaldelights:mat_rolling",
+  "ingredients": [
+    {
+      "item": "minecraft:dried_kelp"
+    },
+    {
+      "item": "farmersdelight:cooked_rice"
+    },
+    {
+      "item": "farmersdelight:cooked_rice"
+    },
+    {
+      "item": "minecraft:sweet_berries"
+    },
+    {
+      "tag": "forge:raw_fishes/salmon"
+    }
+  ],
+  "output": {
+    "item": "culturaldelights:onigiri",
+    "count": 4
+  }
+}
