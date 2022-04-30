@@ -3,6 +3,7 @@ package com.ncpbails.culturaldelights.block;
 import com.ncpbails.culturaldelights.CulturalDelights;
 import com.ncpbails.culturaldelights.block.custom.*;
 import com.ncpbails.culturaldelights.item.ModItems;
+import com.ncpbails.culturaldelights.world.feature.tree.AvocadoPitGrower;
 import com.ncpbails.culturaldelights.world.feature.tree.AvocadoTreeGrower;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -34,20 +35,20 @@ public class ModBlocks {
                     .strength(0, 1f).noOcclusion()), FarmersDelight.CREATIVE_TAB, false, 0);
 
     public static final RegistryObject<Block> BAMBOO_MAT = registerBlock("bamboo_mat",
-            () -> new Block(BlockBehaviour.Properties.of(Material.BAMBOO, MaterialColor.COLOR_GREEN)
+            () -> new BambooMatBlock(BlockBehaviour.Properties.of(Material.BAMBOO, MaterialColor.COLOR_GREEN)
                     .strength(0, 1f).noOcclusion()), FarmersDelight.CREATIVE_TAB, true, 0);
 
     public static final RegistryObject<Block> WILD_CUCUMBERS = registerBlock("wild_cucumbers",
-            () -> new Block(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.COLOR_GREEN)
-                    .strength(0, 0f).noOcclusion()), FarmersDelight.CREATIVE_TAB, false, 0);
+            () -> new Block(BlockBehaviour.Properties.copy(vectorwing.farmersdelight.common.registry.ModBlocks.WILD_BEETROOTS.get())
+                    .noOcclusion()), FarmersDelight.CREATIVE_TAB, false, 0);
 
     public static final RegistryObject<Block> WILD_CORN = registerBlock("wild_corn",
-            () -> new Block(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.COLOR_GREEN)
-                    .strength(0, 0f).noOcclusion()), FarmersDelight.CREATIVE_TAB, false, 0);
+            () -> new Block(BlockBehaviour.Properties.copy(vectorwing.farmersdelight.common.registry.ModBlocks.WILD_BEETROOTS.get())
+                    .noOcclusion()), FarmersDelight.CREATIVE_TAB, false, 0);
 
     public static final RegistryObject<Block> WILD_EGGPLANTS = registerBlock("wild_eggplants",
-            () -> new Block(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.COLOR_GREEN)
-                    .strength(0, 0f).noOcclusion()), FarmersDelight.CREATIVE_TAB, false, 0);
+            () -> new Block(BlockBehaviour.Properties.copy(vectorwing.farmersdelight.common.registry.ModBlocks.WILD_BEETROOTS.get())
+                    .noOcclusion()), FarmersDelight.CREATIVE_TAB, false, 0);
 
     public static final RegistryObject<Block> AVOCADO_LOG = registerBlock("avocado_log",
             () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.JUNGLE_LOG)) {
@@ -70,15 +71,14 @@ public class ModBlocks {
                 }, FarmersDelight.CREATIVE_TAB, true, 0);
 
     public static final RegistryObject<Block> AVOCADO_LEAVES = registerBlock("avocado_leaves",
-            () -> new LeavesBlock(BlockBehaviour.Properties.of(Material.LEAVES, MaterialColor.COLOR_GREEN)
-                    .strength(0, 0.2f).noOcclusion()) {
+            () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.JUNGLE_LEAVES)) {
                         @Override public boolean isFlammable(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return true; }
                         @Override public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return 60; }
                         @Override public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return 30; }
                         }, FarmersDelight.CREATIVE_TAB, true, 0);
 
     public static final RegistryObject<Block> AVOCADO_SAPLING = registerBlock("avocado_sapling",
-            () -> new SaplingBlock(new AvocadoTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)), FarmersDelight.CREATIVE_TAB, false, 0);
+            () -> new SaplingBlock(new AvocadoTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)), FarmersDelight.CREATIVE_TAB, true, 0);
 
     public static final RegistryObject<Block> CUCUMBERS = registerBlockWithoutBlockItem("cucumbers",
             () -> new CucumbersBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noOcclusion()));
@@ -89,38 +89,38 @@ public class ModBlocks {
     public static final RegistryObject<Block> EGGPLANTS = registerBlockWithoutBlockItem("eggplants",
             () -> new EggplantsBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noOcclusion()));
 
-    public static final RegistryObject<Block> CORN = registerBlock("corn",
-            () -> new CornBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noOcclusion()), FarmersDelight.CREATIVE_TAB, false, 0);
+    public static final RegistryObject<Block> CORN = registerBlockWithoutBlockItem("corn",
+            () -> new CornBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noOcclusion()));
 
-    public static final RegistryObject<Block> CORN_UPPER = registerBlock("corn_upper",
-            () -> new CornUpperBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noOcclusion()), FarmersDelight.CREATIVE_TAB, false, 0);
+    public static final RegistryObject<Block> CORN_UPPER = registerBlockWithoutBlockItem("corn_upper",
+            () -> new CornUpperBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noOcclusion()));
 
-    //public static final RegistryObject<Block> AVOCADO_PIT = registerBlock("avocado_pit",
-    //        () -> new AvocadoPitBlock(new AvocadoPit(), (BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING).noOcclusion()), FarmersDelight.CREATIVE_TAB, false, 0);
+    public static final RegistryObject<Block> AVOCADO_PIT = registerBlock("avocado_pit",
+            () -> new AvocadoPitBlock(new AvocadoPitGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)), FarmersDelight.CREATIVE_TAB, false, 0);
 
     public static final RegistryObject<Block> AVOCADO_CRATE = registerBlock("avocado_crate",
-            () -> new Block(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.COLOR_GREEN)
-                    .strength(2, 3f)), FarmersDelight.CREATIVE_TAB, false, 0);
+            () -> new Block(BlockBehaviour.Properties.copy(vectorwing.farmersdelight.common.registry.ModBlocks.CARROT_CRATE.get()))
+            , FarmersDelight.CREATIVE_TAB, false, 0);
 
     public static final RegistryObject<Block> CUCUMBER_CRATE = registerBlock("cucumber_crate",
-            () -> new Block(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.COLOR_GREEN)
-                    .strength(2, 3f)), FarmersDelight.CREATIVE_TAB, false, 0);
+            () -> new Block(BlockBehaviour.Properties.copy(vectorwing.farmersdelight.common.registry.ModBlocks.CARROT_CRATE.get()))
+            , FarmersDelight.CREATIVE_TAB, false, 0);
 
     public static final RegistryObject<Block> PICKLE_CRATE = registerBlock("pickle_crate",
-            () -> new Block(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.COLOR_GREEN)
-                    .strength(2, 3f)), FarmersDelight.CREATIVE_TAB, false, 0);
+            () -> new Block(BlockBehaviour.Properties.copy(vectorwing.farmersdelight.common.registry.ModBlocks.CARROT_CRATE.get()))
+            , FarmersDelight.CREATIVE_TAB, false, 0);
 
     public static final RegistryObject<Block> CORN_COB_CRATE = registerBlock("corn_cob_crate",
-            () -> new Block(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.COLOR_GREEN)
-                    .strength(2, 3f)), FarmersDelight.CREATIVE_TAB, false, 0);
+            () -> new Block(BlockBehaviour.Properties.copy(vectorwing.farmersdelight.common.registry.ModBlocks.CARROT_CRATE.get()))
+            , FarmersDelight.CREATIVE_TAB, false, 0);
 
     public static final RegistryObject<Block> EGGPLANT_CRATE = registerBlock("eggplant_crate",
-            () -> new Block(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.COLOR_GREEN)
-                    .strength(2, 3f)), FarmersDelight.CREATIVE_TAB, false, 0);
+            () -> new Block(BlockBehaviour.Properties.copy(vectorwing.farmersdelight.common.registry.ModBlocks.CARROT_CRATE.get()))
+            , FarmersDelight.CREATIVE_TAB, false, 0);
 
     public static final RegistryObject<Block> WHITE_EGGPLANT_CRATE = registerBlock("white_eggplant_crate",
-            () -> new Block(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.COLOR_GREEN)
-                    .strength(2, 3f)), FarmersDelight.CREATIVE_TAB, false, 0);
+            () -> new Block(BlockBehaviour.Properties.copy(vectorwing.farmersdelight.common.registry.ModBlocks.CARROT_CRATE.get()))
+            , FarmersDelight.CREATIVE_TAB, false, 0);
 
 
 

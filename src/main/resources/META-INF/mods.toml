@@ -54,3 +54,9 @@ description="A Farmer's Delight addon that adds food systems from around the wor
     versionRange="[1.18.2,1.19)"
     ordering="NONE"
     side="BOTH"
+[[dependencies.culturaldelights]]
+    modId = "farmersdelight"
+    mandatory = true
+    versionRange = "[0.6.0,)"
+    ordering = "AFTER"
+    side = "BOTH"

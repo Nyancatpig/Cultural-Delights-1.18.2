@@ -41,4 +41,13 @@ public class ModConfiguredFeatures {
             FeatureUtils.register("avocado_spawn", Feature.RANDOM_SELECTOR,
                     new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(AVOCADO_CHECKED,
                             0.5F)), AVOCADO_CHECKED));
+
+
+    public static final Holder<ConfiguredFeature<TreeConfiguration, ?>> AVOCADO_PIT =
+            FeatureUtils.register("avocado_pit", Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
+                    BlockStateProvider.simple(ModBlocks.AVOCADO_SAPLING.get()),
+                    new StraightTrunkPlacer(3, 2, 0),
+                    BlockStateProvider.simple(ModBlocks.AVOCADO_SAPLING.get()),
+                    new AcaciaFoliagePlacer(ConstantInt.of(0), ConstantInt.of(0)),
+                    new TwoLayersFeatureSize(1, 0, 1)).build());
 }

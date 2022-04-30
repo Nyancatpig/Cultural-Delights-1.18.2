@@ -8,10 +8,10 @@ import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import javax.annotation.Nullable;
 import java.util.Random;
 
-public class AvocadoTreeGrower extends AbstractTreeGrower {
+public class AvocadoPitGrower extends AbstractTreeGrower {
     @Nullable
     @Override
     protected Holder<? extends ConfiguredFeature<?, ?>> getConfiguredFeature(Random pRandom, boolean pLargeHive) {
-        return ModConfiguredFeatures.AVOCADO_TREE;
+        return ModConfiguredFeatures.AVOCADO_PIT;
     }
 }

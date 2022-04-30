@@ -103,7 +103,7 @@ public class ModItems {
             () -> new Item(new Item.Properties().tab(FarmersDelight.CREATIVE_TAB).food(ModFoods.MUTTON_SANDWICH)));
 
     public static final RegistryObject<Item> FRIED_EGGPLANT_PASTA = ITEMS.register("fried_eggplant_pasta",
-            () -> new Item(new Item.Properties().tab(FarmersDelight.CREATIVE_TAB).food(ModFoods.FRIED_EGGPLANT_PASTA)));
+            () -> new BowlFoodItem(new Item.Properties().tab(FarmersDelight.CREATIVE_TAB).food(ModFoods.FRIED_EGGPLANT_PASTA)));
 
     public static final RegistryObject<Item> EGGPLANT_BURGER = ITEMS.register("eggplant_burger",
             () -> new Item(new Item.Properties().tab(FarmersDelight.CREATIVE_TAB).food(ModFoods.EGGPLANT_BURGER)));

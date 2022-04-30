@@ -15,9 +15,7 @@ import java.util.stream.Stream;
 
 public class AvocadoPitBlock extends SaplingBlock {
 
-    private static final VoxelShape SHAPE_PIT = (VoxelShape) Stream.of(
-            Block.box(6, 0, 6, 10, 3, 10)
-            );
+    private static final VoxelShape SHAPE_PIT = Block.box(6, 0, 6, 10, 3, 10);
 
     public AvocadoPitBlock(AbstractTreeGrower treeIn, Properties properties) {
         super(treeIn, properties);
