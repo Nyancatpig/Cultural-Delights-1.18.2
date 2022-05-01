@@ -50,7 +50,7 @@ public class BambooMatBlockEntity extends BlockEntity implements MenuProvider {
 
     @Override
     public Component getDisplayName() {
-        return new TextComponent("Gem Cutting Station");
+        return new TextComponent("Bamboo Mat");
     }
 
     @Nullable

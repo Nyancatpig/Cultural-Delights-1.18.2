@@ -10,7 +10,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 
-public class BambooMatScreen extends AbstractContainerScreen {
+public class BambooMatScreen extends AbstractContainerScreen<BambooMatMenu> {
     private static final ResourceLocation TEXTURE =
             new ResourceLocation(CulturalDelights.MOD_ID, "textures/gui/bamboo_mat_gui.png");
 

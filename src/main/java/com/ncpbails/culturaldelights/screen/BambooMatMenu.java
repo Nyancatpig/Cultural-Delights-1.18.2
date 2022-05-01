@@ -34,12 +34,12 @@ public class BambooMatMenu extends AbstractContainerMenu {
         addPlayerHotbar(inv);
 
         this.blockEntity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(handler -> {
-            this.addSlot(new SlotItemHandler(handler, 0, 34, 40));
-            this.addSlot(new SlotItemHandler(handler, 1, 57, 18));
-            this.addSlot(new SlotItemHandler(handler, 2, 103, 18));
-            this.addSlot(new SlotItemHandler(handler, 3, 103, 18));
-            this.addSlot(new SlotItemHandler(handler, 4, 103, 18));
-            this.addSlot(new ModResultSlot(handler, 5, 80, 60));
+            this.addSlot(new SlotItemHandler(handler, 0, 39, 46));
+            this.addSlot(new SlotItemHandler(handler, 1, 57, 46));
+            this.addSlot(new SlotItemHandler(handler, 2, 30, 22));
+            this.addSlot(new SlotItemHandler(handler, 3, 48, 22));
+            this.addSlot(new SlotItemHandler(handler, 4, 66, 22));
+            this.addSlot(new ModResultSlot(handler, 5, 129, 22));
         });
     }
 
