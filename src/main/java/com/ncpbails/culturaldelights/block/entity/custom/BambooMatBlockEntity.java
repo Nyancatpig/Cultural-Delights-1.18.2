@@ -2,6 +2,7 @@ package com.ncpbails.culturaldelights.block.entity.custom;
 
 import com.ncpbails.culturaldelights.block.entity.ModBlockEntities;
 import com.ncpbails.culturaldelights.item.ModItems;
+import com.ncpbails.culturaldelights.recipe.BambooMatRecipe;
 import com.ncpbails.culturaldelights.screen.BambooMatMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -14,6 +15,7 @@ import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.PotionUtils;
@@ -31,6 +33,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import javax.annotation.Nonnull;
+import java.util.Optional;
 import java.util.Random;
 
 public class BambooMatBlockEntity extends BlockEntity implements MenuProvider {
@@ -44,8 +47,32 @@ public class BambooMatBlockEntity extends BlockEntity implements MenuProvider {
 
     private LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
 
+    protected final ContainerData data;
+    private int progress = 0;
+    private int maxProgress = 72;
+
     public BambooMatBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
         super(ModBlockEntities.BAMBOO_MAT_BLOCK_ENTITY.get(), pWorldPosition, pBlockState);
+        this.data = new ContainerData() {
+            public int get(int index) {
+                switch (index) {
+                    case 0: return BambooMatBlockEntity.this.progress;
+                    case 1: return BambooMatBlockEntity.this.maxProgress;
+                    default: return 0;
+                }
+            }
+
+            public void set(int index, int value) {
+                switch(index) {
+                    case 0: BambooMatBlockEntity.this.progress = value; break;
+                    case 1: BambooMatBlockEntity.this.maxProgress = value; break;
+                }
+            }
+
+            public int getCount() {
+                return 2;
+            }
+        };
     }
 
     @Override
@@ -56,7 +83,7 @@ public class BambooMatBlockEntity extends BlockEntity implements MenuProvider {
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int pContainerId, Inventory pInventory, Player pPlayer) {
-        return new BambooMatMenu(pContainerId, pInventory, this);
+        return new BambooMatMenu(pContainerId, pInventory, this, this.data);
     }
 
     @Nonnull
@@ -84,6 +111,7 @@ public class BambooMatBlockEntity extends BlockEntity implements MenuProvider {
     @Override
     protected void saveAdditional(@NotNull CompoundTag tag) {
         tag.put("inventory", itemHandler.serializeNBT());
+        tag.putInt("bamboo_mat.progress", progress);
         super.saveAdditional(tag);
     }
 
@@ -91,6 +119,7 @@ public class BambooMatBlockEntity extends BlockEntity implements MenuProvider {
     public void load(CompoundTag nbt) {
         super.load(nbt);
         itemHandler.deserializeNBT(nbt.getCompound("inventory"));
+        progress = nbt.getInt("bamboo_mat.progress");
     }
 
     public void drops() {
@@ -104,30 +133,73 @@ public class BambooMatBlockEntity extends BlockEntity implements MenuProvider {
 
 
     public static void tick(Level pLevel, BlockPos pPos, BlockState pState, BambooMatBlockEntity pBlockEntity) {
-        if(hasRecipe(pBlockEntity) && hasNotReachedStackLimit(pBlockEntity)) {
-            craftItem(pBlockEntity);
+        if(hasRecipe(pBlockEntity)) {
+            pBlockEntity.progress++;
+            setChanged(pLevel, pPos, pState);
+            if(pBlockEntity.progress > pBlockEntity.maxProgress) {
+                craftItem(pBlockEntity);
+            }
+        } else {
+            pBlockEntity.resetProgress();
+            setChanged(pLevel, pPos, pState);
         }
     }
 
-    private static void craftItem(BambooMatBlockEntity entity) {
-        entity.itemHandler.extractItem(0, 1, false);
-        entity.itemHandler.extractItem(1, 1, false);
-        entity.itemHandler.getStackInSlot(2).hurt(1, new Random(), null);
-
-        entity.itemHandler.setStackInSlot(3, new ItemStack(ModItems.AVOCADO_TOAST.get(),
-                entity.itemHandler.getStackInSlot(3).getCount() + 1));
-    }
-
     private static boolean hasRecipe(BambooMatBlockEntity entity) {
-        boolean hasItemInWaterSlot = PotionUtils.getPotion(entity.itemHandler.getStackInSlot(0)) == Potions.WATER;
-        boolean hasItemInFirstSlot = entity.itemHandler.getStackInSlot(1).getItem() == ModItems.AVOCADO.get();
-        boolean hasItemInSecondSlot = entity.itemHandler.getStackInSlot(2).getItem() == Items.IRON_AXE;
+        Level level = entity.level;
+        SimpleContainer inventory = new SimpleContainer(entity.itemHandler.getSlots());
+        for (int i = 0; i < entity.itemHandler.getSlots(); i++) {
+            inventory.setItem(i, entity.itemHandler.getStackInSlot(i));
+        }
 
-        return hasItemInWaterSlot && hasItemInFirstSlot && hasItemInSecondSlot;
+        Optional<BambooMatRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BambooMatRecipe.Type.INSTANCE, inventory, level);
+
+        return match.isPresent() && canInsertAmountIntoOutputSlot(inventory)
+                && canInsertItemIntoOutputSlot(inventory, match.get().getResultItem())
+                && hasWaterInWaterSlot(entity) && hasToolsInToolSlot(entity);
     }
 
-    private static boolean hasNotReachedStackLimit(BambooMatBlockEntity entity) {
-        return entity.itemHandler.getStackInSlot(3).getCount() < entity.itemHandler.getStackInSlot(3).getMaxStackSize();
+    private static boolean hasWaterInWaterSlot(BambooMatBlockEntity entity) {
+        return PotionUtils.getPotion(entity.itemHandler.getStackInSlot(0)) == Potions.WATER;
+    }
+
+    private static boolean hasToolsInToolSlot(BambooMatBlockEntity entity) {
+        return entity.itemHandler.getStackInSlot(2).getItem() == Items.IRON_AXE;
+    }
+
+    private static void craftItem(BambooMatBlockEntity entity) {
+        Level level = entity.level;
+        SimpleContainer inventory = new SimpleContainer(entity.itemHandler.getSlots());
+        for (int i = 0; i < entity.itemHandler.getSlots(); i++) {
+            inventory.setItem(i, entity.itemHandler.getStackInSlot(i));
+        }
+
+        Optional<BambooMatRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BambooMatRecipe.Type.INSTANCE, inventory, level);
+
+        if(match.isPresent()) {
+            entity.itemHandler.extractItem(0,1, false);
+            entity.itemHandler.extractItem(1,1, false);
+            entity.itemHandler.getStackInSlot(2).hurt(1, new Random(), null);
+
+            entity.itemHandler.setStackInSlot(3, new ItemStack(match.get().getResultItem().getItem(),
+                    entity.itemHandler.getStackInSlot(3).getCount() + 1));
+
+            entity.resetProgress();
+        }
+    }
+
+    private void resetProgress() {
+        this.progress = 0;
+    }
+
+    private static boolean canInsertItemIntoOutputSlot(SimpleContainer inventory, ItemStack output) {
+        return inventory.getItem(3).getItem() == output.getItem() || inventory.getItem(3).isEmpty();
+    }
+
+    private static boolean canInsertAmountIntoOutputSlot(SimpleContainer inventory) {
+        return inventory.getItem(3).getMaxStackSize() > inventory.getItem(3).getCount();
     }
 }
 

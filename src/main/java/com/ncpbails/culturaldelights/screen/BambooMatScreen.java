@@ -27,6 +27,10 @@ public class BambooMatScreen extends AbstractContainerScreen<BambooMatMenu> {
         int y = (height - imageHeight) / 2;
 
         this.blit(pPoseStack, x, y, 0, 0, imageWidth, imageHeight);
+
+        if(menu.isCrafting()) {
+            blit(pPoseStack, x + 102, y + 41, 1, 0, 2, menu.getScaledProgress());
+        }
     }
 
     @Override
@@ -35,4 +39,6 @@ public class BambooMatScreen extends AbstractContainerScreen<BambooMatMenu> {
         super.render(pPoseStack, mouseX, mouseY, delta);
         renderTooltip(pPoseStack, mouseX, mouseY);
     }
+
+
 }

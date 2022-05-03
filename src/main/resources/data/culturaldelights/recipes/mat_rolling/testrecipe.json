@@ -1,0 +1,11 @@
+{
+  "type": "culturaldelights:mat_rolling",
+  "ingredients": [
+    {
+      "item": "culturaldelights:avocado"
+    }
+  ],
+  "output": {
+    "item": "culturaldelights:eggplant"
+  }
+}

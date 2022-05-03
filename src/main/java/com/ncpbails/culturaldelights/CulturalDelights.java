@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 import com.ncpbails.culturaldelights.block.ModBlocks;
 import com.ncpbails.culturaldelights.block.entity.ModBlockEntities;
 import com.ncpbails.culturaldelights.item.ModItems;
+import com.ncpbails.culturaldelights.recipe.ModRecipes;
 import com.ncpbails.culturaldelights.screen.BambooMatScreen;
 import com.ncpbails.culturaldelights.screen.ModMenuTypes;
 import net.minecraft.client.gui.screens.MenuScreens;
@@ -39,6 +40,7 @@ public class CulturalDelights
         ModBlocks.register(eventBus);
         ModBlockEntities.register(eventBus);
         ModMenuTypes.register(eventBus);
+        ModRecipes.register(eventBus);
 
         eventBus.addListener(this::setup);
         eventBus.addListener(this::clientSetup);
