@@ -136,9 +136,9 @@ public class BambooMatBlockEntity extends BlockEntity implements MenuProvider {
         if(hasRecipe(pBlockEntity)) {
             pBlockEntity.progress++;
             setChanged(pLevel, pPos, pState);
-            if(pBlockEntity.progress > pBlockEntity.maxProgress) {
+            //if(pBlockEntity.progress > pBlockEntity.maxProgress) {
                 craftItem(pBlockEntity);
-            }
+            //}
         } else {
             pBlockEntity.resetProgress();
             setChanged(pLevel, pPos, pState);
@@ -188,8 +188,9 @@ public class BambooMatBlockEntity extends BlockEntity implements MenuProvider {
     }
 
     private static boolean canInsertItemIntoOutputSlot(SimpleContainer inventory, ItemStack output) {
-        return inventory.getItem(5).getItem() == output.getItem() || inventory.getItem(5).isEmpty();
+        return inventory.getItem(5).isEmpty();
     }
+//inventory.getItem(5).getItem() == output.getItem() ||
 
     private static boolean canInsertAmountIntoOutputSlot(SimpleContainer inventory) {
         return inventory.getItem(5).getMaxStackSize() > inventory.getItem(5).getCount();
