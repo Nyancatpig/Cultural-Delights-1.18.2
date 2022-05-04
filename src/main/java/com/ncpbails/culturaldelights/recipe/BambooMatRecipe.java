@@ -29,7 +29,16 @@ public class BambooMatRecipe implements Recipe<SimpleContainer> {
 
     @Override
     public boolean matches(SimpleContainer pContainer, Level pLevel) {
-        return recipeItems.get(0).test(pContainer.getItem(1));
+        //return recipeItems.get(0).test(pContainer.getItem(0));
+        boolean matchesFirst = recipeItems.get(0).test(pContainer.getItem(0));
+        boolean matchesSecond = recipeItems.get(1).test(pContainer.getItem(1));
+        boolean matchesThird = recipeItems.get(2).test(pContainer.getItem(2));
+        boolean matchesFourth = recipeItems.get(3).test(pContainer.getItem(3));
+        boolean matchesFith = recipeItems.get(4).test(pContainer.getItem(4));
+        if ( matchesFirst && matchesSecond && matchesThird && matchesFourth && matchesFith) {
+            return true;
+        }
+        return false;
     }
 
     @Override
@@ -78,7 +87,7 @@ public class BambooMatRecipe implements Recipe<SimpleContainer> {
             ItemStack output = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(json, "output"));
 
             JsonArray ingredients = GsonHelper.getAsJsonArray(json, "ingredients");
-            NonNullList<Ingredient> inputs = NonNullList.withSize(1, Ingredient.EMPTY);
+            NonNullList<Ingredient> inputs = NonNullList.withSize(5, Ingredient.EMPTY);
 
             for (int i = 0; i < inputs.size(); i++) {
                 inputs.set(i, Ingredient.fromJson(ingredients.get(i)));

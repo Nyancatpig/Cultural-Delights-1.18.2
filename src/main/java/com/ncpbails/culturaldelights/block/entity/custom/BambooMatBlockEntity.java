@@ -156,19 +156,10 @@ public class BambooMatBlockEntity extends BlockEntity implements MenuProvider {
                 .getRecipeFor(BambooMatRecipe.Type.INSTANCE, inventory, level);
 
         return match.isPresent() && canInsertAmountIntoOutputSlot(inventory)
-                && canInsertItemIntoOutputSlot(inventory, match.get().getResultItem())
-                && hasWaterInWaterSlot(entity) && hasToolsInToolSlot(entity);
+                && canInsertItemIntoOutputSlot(inventory, match.get().getResultItem());
     }
 
-    private static boolean hasWaterInWaterSlot(BambooMatBlockEntity entity) {
-        return PotionUtils.getPotion(entity.itemHandler.getStackInSlot(0)) == Potions.WATER;
-    }
-
-    private static boolean hasToolsInToolSlot(BambooMatBlockEntity entity) {
-        return entity.itemHandler.getStackInSlot(2).getItem() == Items.IRON_AXE;
-    }
-
-    private static void craftItem(BambooMatBlockEntity entity) {
+       private static void craftItem(BambooMatBlockEntity entity) {
         Level level = entity.level;
         SimpleContainer inventory = new SimpleContainer(entity.itemHandler.getSlots());
         for (int i = 0; i < entity.itemHandler.getSlots(); i++) {
@@ -181,10 +172,12 @@ public class BambooMatBlockEntity extends BlockEntity implements MenuProvider {
         if(match.isPresent()) {
             entity.itemHandler.extractItem(0,1, false);
             entity.itemHandler.extractItem(1,1, false);
-            entity.itemHandler.getStackInSlot(2).hurt(1, new Random(), null);
+            entity.itemHandler.extractItem(2,1, false);
+            entity.itemHandler.extractItem(3,1, false);
+            entity.itemHandler.extractItem(4,1, false);
 
-            entity.itemHandler.setStackInSlot(3, new ItemStack(match.get().getResultItem().getItem(),
-                    entity.itemHandler.getStackInSlot(3).getCount() + 1));
+            entity.itemHandler.setStackInSlot(5, new ItemStack(match.get().getResultItem().getItem(),
+                    entity.itemHandler.getStackInSlot(5).getCount() + 1));
 
             entity.resetProgress();
         }
@@ -195,11 +188,11 @@ public class BambooMatBlockEntity extends BlockEntity implements MenuProvider {
     }
 
     private static boolean canInsertItemIntoOutputSlot(SimpleContainer inventory, ItemStack output) {
-        return inventory.getItem(3).getItem() == output.getItem() || inventory.getItem(3).isEmpty();
+        return inventory.getItem(5).getItem() == output.getItem() || inventory.getItem(5).isEmpty();
     }
 
     private static boolean canInsertAmountIntoOutputSlot(SimpleContainer inventory) {
-        return inventory.getItem(3).getMaxStackSize() > inventory.getItem(3).getCount();
+        return inventory.getItem(5).getMaxStackSize() > inventory.getItem(5).getCount();
     }
 }
 
