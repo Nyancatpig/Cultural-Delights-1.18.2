@@ -31,12 +31,11 @@ public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, CulturalDelights.MOD_ID);
 
     public static final RegistryObject<Block> AVOCADO_BUNDLE = registerBlock("avocado_bundle",
-            () -> new Block(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.COLOR_GREEN)
-                    .strength(0, 1f).noOcclusion()), FarmersDelight.CREATIVE_TAB, false, 0);
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.PUMPKIN).noOcclusion()), FarmersDelight.CREATIVE_TAB, false, 0);
 
     public static final RegistryObject<Block> BAMBOO_MAT = registerBlock("bamboo_mat",
-            () -> new BambooMatBlock(BlockBehaviour.Properties.of(Material.BAMBOO, MaterialColor.COLOR_GREEN)
-                    .strength(0, 1f).noOcclusion()), FarmersDelight.CREATIVE_TAB, true, 0);
+            () -> new BambooMatBlock(BlockBehaviour.Properties.copy(vectorwing.farmersdelight.common.registry.ModBlocks.CUTTING_BOARD.get())
+                    .noOcclusion()), FarmersDelight.CREATIVE_TAB, true, 0);
 
     public static final RegistryObject<Block> WILD_CUCUMBERS = registerBlock("wild_cucumbers",
             () -> new Block(BlockBehaviour.Properties.copy(vectorwing.farmersdelight.common.registry.ModBlocks.WILD_BEETROOTS.get())

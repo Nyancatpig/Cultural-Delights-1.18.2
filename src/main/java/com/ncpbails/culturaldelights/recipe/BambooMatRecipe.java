@@ -42,6 +42,11 @@ public class BambooMatRecipe implements Recipe<SimpleContainer> {
     }
 
     @Override
+    public NonNullList<Ingredient> getIngredients() {
+        return recipeItems;
+    }
+
+    @Override
     public ItemStack assemble(SimpleContainer p_44001_) {
         return output;
     }

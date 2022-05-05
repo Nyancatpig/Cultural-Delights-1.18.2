@@ -4,6 +4,8 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import com.ncpbails.culturaldelights.block.ModBlocks;
 import com.ncpbails.culturaldelights.world.gen.treedecorator.AvocadoBundleTreeDecorator;
+import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.AcaciaFoliagePlacer;
 import net.minecraft.core.Holder;
 import net.minecraft.data.worldgen.features.FeatureUtils;
@@ -50,4 +52,22 @@ public class ModConfiguredFeatures {
                     BlockStateProvider.simple(ModBlocks.AVOCADO_SAPLING.get()),
                     new AcaciaFoliagePlacer(ConstantInt.of(0), ConstantInt.of(0)),
                     new TwoLayersFeatureSize(1, 0, 1)).build());
+
+
+
+    public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> WILD_CORN =
+            FeatureUtils.register("wild_corn", Feature.FLOWER,
+                    new RandomPatchConfiguration(32, 6, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK,
+                            new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.WILD_CORN.get())))));
+
+    public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> WILD_EGGPLANTS =
+            FeatureUtils.register("wild_eggplants", Feature.FLOWER,
+                    new RandomPatchConfiguration(32, 6, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK,
+                            new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.WILD_EGGPLANTS.get())))));
+
+    public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> WILD_CUCUMBERS =
+            FeatureUtils.register("wild_cucumbers", Feature.FLOWER,
+                    new RandomPatchConfiguration(32, 6, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK,
+                            new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.WILD_CUCUMBERS.get())))));
+
 }
