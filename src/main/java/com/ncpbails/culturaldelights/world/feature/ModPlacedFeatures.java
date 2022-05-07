@@ -13,14 +13,14 @@ public class ModPlacedFeatures {
             ModConfiguredFeatures.AVOCADO_SPAWN, VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.1f, 1)));
 
     public static final Holder<PlacedFeature> WILD_CORN_PLACED = PlacementUtils.register("wild_corn_placed",
-            ModConfiguredFeatures.WILD_CORN, RarityFilter.onAverageOnceEvery(16),
+            ModConfiguredFeatures.WILD_CORN, RarityFilter.onAverageOnceEvery(25),
             InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
 
     public static final Holder<PlacedFeature> WILD_EGGPLANTS_PLACED = PlacementUtils.register("wild_eggplants_placed",
-            ModConfiguredFeatures.WILD_EGGPLANTS, RarityFilter.onAverageOnceEvery(16),
+            ModConfiguredFeatures.WILD_EGGPLANTS, RarityFilter.onAverageOnceEvery(25),
             InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
 
     public static final Holder<PlacedFeature> WILD_CUCUMBERS_PLACED = PlacementUtils.register("wild_cucumbers_placed",
-            ModConfiguredFeatures.WILD_CUCUMBERS, RarityFilter.onAverageOnceEvery(16),
+            ModConfiguredFeatures.WILD_CUCUMBERS, RarityFilter.onAverageOnceEvery(25),
             InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
 }

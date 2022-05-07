@@ -3,15 +3,19 @@ package com.ncpbails.culturaldelights.block.entity.custom;
 import com.ncpbails.culturaldelights.block.entity.ModBlockEntities;
 import com.ncpbails.culturaldelights.item.ModItems;
 import com.ncpbails.culturaldelights.recipe.BambooMatRecipe;
+import com.ncpbails.culturaldelights.recipe.ModRecipes;
 import com.ncpbails.culturaldelights.screen.BambooMatMenu;
+import com.ncpbails.culturaldelights.util.ModTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextComponent;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.Containers;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.SimpleContainer;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
@@ -31,6 +35,7 @@ import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import vectorwing.farmersdelight.common.block.entity.CookingPotBlockEntity;
 
 import javax.annotation.Nonnull;
 import java.util.Optional;
@@ -170,6 +175,7 @@ public class BambooMatBlockEntity extends BlockEntity implements MenuProvider {
                 .getRecipeFor(BambooMatRecipe.Type.INSTANCE, inventory, level);
 
         if(match.isPresent()) {
+            giveBowls(entity);
             entity.itemHandler.extractItem(0,1, false);
             entity.itemHandler.extractItem(1,1, false);
             entity.itemHandler.extractItem(2,1, false);
@@ -180,6 +186,21 @@ public class BambooMatBlockEntity extends BlockEntity implements MenuProvider {
                     entity.itemHandler.getStackInSlot(5).getCount() + 1));
 
             entity.resetProgress();
+        }
+    }
+
+    private static void giveBowls(BambooMatBlockEntity entity) {
+        SimpleContainer inventory = new SimpleContainer(entity.itemHandler.getSlots());
+        Optional<BambooMatRecipe> match = entity.level.getRecipeManager()
+                .getRecipeFor(BambooMatRecipe.Type.INSTANCE, inventory, entity.level);
+        for (int i = 0; i < entity.itemHandler.getSlots(); i++) {
+
+            if((entity.itemHandler.getStackInSlot(i)).is(ModTags.Items.BOWL_FOODS)) {
+                if(!entity.level.isClientSide()) {
+                    ItemEntity entityToSpawn = new ItemEntity((Level) entity.level, entity.worldPosition.getX(), entity.worldPosition.getY(), entity.worldPosition.getZ(), new ItemStack(Items.BOWL));
+                    entity.level.addFreshEntity(entityToSpawn);
+                }
+            }
         }
     }
 

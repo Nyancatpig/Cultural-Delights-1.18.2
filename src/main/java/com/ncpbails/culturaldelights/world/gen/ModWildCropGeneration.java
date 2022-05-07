@@ -25,7 +25,7 @@ public class ModWildCropGeneration {
             base.add(ModPlacedFeatures.WILD_CORN_PLACED);
         }
 
-        if(types.contains(BiomeDictionary.Type.SWAMP)) {
+        else if(types.contains(BiomeDictionary.Type.SWAMP)) {
             List<Holder<PlacedFeature>> base =
                     event.getGeneration().getFeatures(GenerationStep.Decoration.VEGETAL_DECORATION);
 
@@ -33,7 +33,7 @@ public class ModWildCropGeneration {
             base.add(ModPlacedFeatures.WILD_CUCUMBERS_PLACED);
         }
 
-        if(types.contains(BiomeDictionary.Type.JUNGLE)) {
+        else if(types.contains(BiomeDictionary.Type.JUNGLE)) {
             List<Holder<PlacedFeature>> base =
                     event.getGeneration().getFeatures(GenerationStep.Decoration.VEGETAL_DECORATION);
 

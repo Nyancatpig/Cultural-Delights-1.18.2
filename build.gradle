@@ -21,7 +21,7 @@ apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 apply plugin: "org.spongepowered.mixin"
 
-version = '1.18.2-0.10'
+version = '1.18.2-0.10.1'
 group = 'com.ncpbails.culturaldelights' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'culturaldelights'
 
@@ -189,6 +189,7 @@ dependencies {
     implementation fg.deobf("curse.maven:farmersdelight-398521:3765351")
     runtimeOnly fg.deobf("curse.maven:appleskin-248787:3686482")
 
+
     // Real mod deobf dependency examples - these get remapped to your current mappings
     // compileOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}:api") // Adds JEI API as a compile dependency
     // runtimeOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}") // Adds the full JEI mod as a runtime dependency
@@ -208,7 +209,7 @@ jar {
         attributes([
                 "Specification-Title"     : "culturaldelights",
                 "Specification-Vendor"    : "ncpbails",
-                "Specification-Version"   : "1", // We are version 1 of ourselves
+                "Specification-Version"   : "0.10.1", // We are version 1 of ourselves
                 "Implementation-Title"    : project.name,
                 "Implementation-Version"  : project.jar.archiveVersion,
                 "Implementation-Vendor"   : "ncpbails",
