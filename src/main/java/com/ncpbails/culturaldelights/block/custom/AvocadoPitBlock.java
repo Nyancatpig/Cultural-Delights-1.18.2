@@ -10,6 +10,7 @@ import net.minecraft.world.level.block.grower.AbstractTreeGrower;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import vectorwing.farmersdelight.common.block.CookingPotBlock;
 
 import java.util.stream.Stream;
 

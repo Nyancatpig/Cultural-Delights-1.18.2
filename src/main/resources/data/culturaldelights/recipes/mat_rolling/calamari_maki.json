@@ -1,0 +1,24 @@
+{
+  "type": "culturaldelights:mat_rolling",
+  "ingredients": [
+    {
+      "item": "minecraft:dried_kelp"
+    },
+    {
+      "item": "farmersdelight:cooked_rice"
+    },
+    {
+      "tag": "culturaldelights:cucumbers"
+    },
+    {
+      "item": "culturaldelights:raw_calamari"
+    },
+    {
+      "item": "culturaldelights:raw_calamari"
+    }
+  ],
+  "output": {
+    "item": "culturaldelights:calamari_maki",
+    "count": 2
+  }
+}

@@ -2,17 +2,17 @@
   "type": "farmersdelight:cooking",
   "ingredients": [
     {
-      "tag": "culturaldelights:regular_eggplants"
+      "tag": "forge:crops/corn"
     },
     {
-      "item": "farmersdelight:raw_pasta"
+      "tag": "forge:crops/corn"
     },
     {
-      "item": "farmersdelight:tomato_sauce"
+      "tag": "forge:milk"
     }
   ],
   "result": {
-    "item": "culturaldelights:fried_eggplant_pasta",
+    "item": "culturaldelights:creamed_corn",
     "count": 1
   },
   "container": {

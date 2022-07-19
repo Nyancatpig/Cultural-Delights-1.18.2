@@ -20,6 +20,9 @@
   "result": {
     "item": "farmersdelight:fried_rice"
   },
+  "container": {
+    "item": "minecraft:bowl"
+  },
   "experience": 0.35,
   "cookingtime": 200
 }

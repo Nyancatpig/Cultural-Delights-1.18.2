@@ -6,6 +6,7 @@ import com.ncpbails.culturaldelights.world.gen.ModWildCropGeneration;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import vectorwing.farmersdelight.common.block.OrganicCompostBlock;
 
 @Mod.EventBusSubscriber(modid = CulturalDelights.MOD_ID)
 public class ModWorldEvents {
@@ -14,5 +15,5 @@ public class ModWorldEvents {
     public static void biomeLoadingEvent(final BiomeLoadingEvent event) {
         ModTreeGeneration.generateTrees(event);
         ModWildCropGeneration.generateFlowers(event);
-        }
+    }
 }

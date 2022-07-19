@@ -90,11 +90,27 @@ public class ModItems {
     public static final RegistryObject<Item> TORTILLA_CHIPS = ITEMS.register("tortilla_chips",
             () -> new Item(new Item.Properties().tab(FarmersDelight.CREATIVE_TAB).food(ModFoods.TORTILLA_CHIPS)));
 
+    public static final RegistryObject<Item> SQUID = ITEMS.register("squid",
+            () -> new Item(new Item.Properties().tab(FarmersDelight.CREATIVE_TAB).food(ModFoods.SQUID)));
+
+    public static final RegistryObject<Item> COOKED_SQUID = ITEMS.register("cooked_squid",
+            () -> new Item(new Item.Properties().tab(FarmersDelight.CREATIVE_TAB).food(ModFoods.COOKED_SQUID)));
+
+    public static final RegistryObject<Item> GLOW_SQUID = ITEMS.register("glow_squid",
+            () -> new Item(new Item.Properties().tab(FarmersDelight.CREATIVE_TAB).food(ModFoods.GLOW_SQUID)));
+
+    public static final RegistryObject<Item> RAW_CALAMARI = ITEMS.register("raw_calamari",
+            () -> new Item(new Item.Properties().tab(FarmersDelight.CREATIVE_TAB).food(ModFoods.RAW_CALAMARI)));
+
+    public static final RegistryObject<Item> COOKED_CALAMARI = ITEMS.register("cooked_calamari",
+            () -> new Item(new Item.Properties().tab(FarmersDelight.CREATIVE_TAB).food(ModFoods.COOKED_CALAMARI)));
+
+
     public static final RegistryObject<Item> ELOTE = ITEMS.register("elote",
             () -> new Item(new Item.Properties().tab(FarmersDelight.CREATIVE_TAB).food(ModFoods.ELOTE)));
 
     public static final RegistryObject<Item> HEARTY_SALAD = ITEMS.register("hearty_salad",
-            () -> new BowlFoodItem(new Item.Properties().tab(FarmersDelight.CREATIVE_TAB).food(ModFoods.HEARTY_SALAD)));
+            () -> new BowlFoodItem(new Item.Properties().stacksTo(16).tab(FarmersDelight.CREATIVE_TAB).food(ModFoods.HEARTY_SALAD)));
 
     public static final RegistryObject<Item> BEEF_BURRITO = ITEMS.register("beef_burrito",
             () -> new Item(new Item.Properties().tab(FarmersDelight.CREATIVE_TAB).food(ModFoods.BEEF_BURRITO)));
@@ -103,13 +119,16 @@ public class ModItems {
             () -> new Item(new Item.Properties().tab(FarmersDelight.CREATIVE_TAB).food(ModFoods.MUTTON_SANDWICH)));
 
     public static final RegistryObject<Item> FRIED_EGGPLANT_PASTA = ITEMS.register("fried_eggplant_pasta",
-            () -> new BowlFoodItem(new Item.Properties().tab(FarmersDelight.CREATIVE_TAB).food(ModFoods.FRIED_EGGPLANT_PASTA)));
+            () -> new BowlFoodItem(new Item.Properties().stacksTo(16).tab(FarmersDelight.CREATIVE_TAB).food(ModFoods.FRIED_EGGPLANT_PASTA)));
 
     public static final RegistryObject<Item> EGGPLANT_BURGER = ITEMS.register("eggplant_burger",
             () -> new Item(new Item.Properties().tab(FarmersDelight.CREATIVE_TAB).food(ModFoods.EGGPLANT_BURGER)));
 
     public static final RegistryObject<Item> AVOCADO_TOAST = ITEMS.register("avocado_toast",
             () -> new Item(new Item.Properties().tab(FarmersDelight.CREATIVE_TAB).food(ModFoods.AVOCADO_TOAST)));
+
+    public static final RegistryObject<Item> CREAMED_CORN = ITEMS.register("creamed_corn",
+            () -> new BowlFoodItem(new Item.Properties().stacksTo(16).tab(FarmersDelight.CREATIVE_TAB).food(ModFoods.CREAMED_CORN)));
 
 
 
@@ -148,6 +167,9 @@ public class ModItems {
 
     public static final RegistryObject<Item> ONIGIRI = ITEMS.register("onigiri",
             () -> new Item(new Item.Properties().tab(FarmersDelight.CREATIVE_TAB).food(ModFoods.ONIGIRI)));
+
+    public static final RegistryObject<Item> CALAMARI_MAKI = ITEMS.register("calamari_maki",
+            () -> new Item(new Item.Properties().tab(FarmersDelight.CREATIVE_TAB).food(ModFoods.CALAMARI_MAKI)));
 
 
     public static void register(IEventBus eventBus) {

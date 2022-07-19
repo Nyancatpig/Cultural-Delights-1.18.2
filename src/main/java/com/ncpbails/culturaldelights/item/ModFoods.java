@@ -21,11 +21,20 @@ public class ModFoods {
     public static final FoodProperties CORN_COB = (new FoodProperties.Builder()).nutrition(2).saturationMod(0.4F).build();
     public static final FoodProperties CORN_DOUGH = (new FoodProperties.Builder()).nutrition(1).saturationMod(0.1F).build();
     public static final FoodProperties TORTILLA = (new FoodProperties.Builder()).nutrition(4).saturationMod(0.6F).build();
-    
+    public static final FoodProperties SQUID = (new FoodProperties.Builder()).nutrition(2).saturationMod(0.2F).build();
+    public static final FoodProperties COOKED_SQUID = (new FoodProperties.Builder()).nutrition(6).saturationMod(0.8F).build();
+    public static final FoodProperties GLOW_SQUID = (new FoodProperties.Builder()).nutrition(2).saturationMod(0.2F)
+            .effect(() -> new MobEffectInstance(MobEffects.GLOWING, 40, 1), 1.0F).fast().build();
+    public static final FoodProperties RAW_CALAMARI = (new FoodProperties.Builder()).nutrition(1).saturationMod(0.2F).build();
+    public static final FoodProperties COOKED_CALAMARI = (new FoodProperties.Builder()).nutrition(3).saturationMod(0.5F).build();
+
+
+
     public static final FoodProperties ELOTE = (new FoodProperties.Builder()).nutrition(4).saturationMod(0.8F).build();
     public static final FoodProperties BEEF_BURRITO = (new FoodProperties.Builder()).nutrition(14).saturationMod(0.7F).build();
     public static final FoodProperties MUTTON_SANDWICH = (new FoodProperties.Builder()).nutrition(10).saturationMod(0.8F).build();
     public static final FoodProperties AVOCADO_TOAST = (new FoodProperties.Builder()).nutrition(4).saturationMod(0.5F).build();
+    public static final FoodProperties CREAMED_CORN = (new FoodProperties.Builder()).nutrition(6).saturationMod(0.8F).build();
 
     //FAST TO EAT
     public static final FoodProperties CUT_AVOCADO = (new FoodProperties.Builder()).nutrition(2).saturationMod(0.3F).fast().build();
@@ -51,7 +60,10 @@ public class ModFoods {
     public static final FoodProperties SALMON_NIGIRI = (new FoodProperties.Builder()).nutrition(3).saturationMod(0.6F).fast().build();
     public static final FoodProperties TROPICAL_NIGIRI = (new FoodProperties.Builder()).nutrition(1).saturationMod(0.15F).fast().build();
     public static final FoodProperties ONIGIRI = (new FoodProperties.Builder()).nutrition(3).saturationMod(0.5F).fast().build();
-    
+    public static final FoodProperties CALAMARI_MAKI = (new FoodProperties.Builder()).nutrition(4).saturationMod(0.5F).fast().build();
+
+
+
     //MEALS
     public static final FoodProperties HEARTY_SALAD = (new FoodProperties.Builder()).nutrition(7).saturationMod(0.7F)
             .effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), FoodValues.LONG_DURATION, 0), 1.0F).build();
