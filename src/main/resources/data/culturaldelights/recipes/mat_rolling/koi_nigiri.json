@@ -8,13 +8,13 @@
       "item": "farmersdelight:cooked_rice"
     },
     {
-      "item": "environmental:koi"
+      "tag": "forge:raw_fishes/koi"
     },
     {
-      "item": "environmental:koi"
+      "tag": "forge:raw_fishes/koi"
     },
     {
-      "item": "environmental:koi"
+      "tag": "forge:raw_fishes/koi"
     }
   ],
   "output": {
