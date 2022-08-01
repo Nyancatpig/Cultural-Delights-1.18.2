@@ -187,6 +187,7 @@ dependencies {
 
     //implementation fg.deobf("curse.maven:abnormals-core:3457851")
     implementation fg.deobf("curse.maven:farmersdelight-398521:3765351")
+    runtimeOnly fg.deobf("curse.maven:brewinandchewin-637808:3854764")
     runtimeOnly fg.deobf("curse.maven:appleskin-248787:3686482")
 
 
