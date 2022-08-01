@@ -49,11 +49,6 @@ public class ModFoods {
     public static final FoodProperties TAMAGO = (new FoodProperties.Builder()).nutrition(3).saturationMod(0.5F).fast().build();
     public static final FoodProperties CHICKEN_MAKI = (new FoodProperties.Builder()).nutrition(10).saturationMod(1F).fast().build();
     public static final FoodProperties COD_MAKI = (new FoodProperties.Builder()).nutrition(3).saturationMod(0.5F).fast().build();
-    public static final FoodProperties KOI_NIGIRI = (new FoodProperties.Builder()).nutrition(1).saturationMod(0.5F).fast().build();
-    public static final FoodProperties LIONFISH_MAKI = (new FoodProperties.Builder()).nutrition(3).saturationMod(0.5F)
-            .effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), FoodValues.LONG_DURATION, 0), 1.0F).fast().build();
-    public static final FoodProperties PERCH_NIGIRI = (new FoodProperties.Builder()).nutrition(3).saturationMod(0.25F).fast().build();
-    public static final FoodProperties PIKE_MAKI = (new FoodProperties.Builder()).nutrition(3).saturationMod(0.5F).fast().build();
     public static final FoodProperties PUFFERFISH_NIGIRI = (new FoodProperties.Builder()).nutrition(3).saturationMod(0.5F)
             .effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 200, 0), 1.0F)
             .effect(() -> new MobEffectInstance(MobEffects.HUNGER, 200, 1), 1.0F).fast().build();

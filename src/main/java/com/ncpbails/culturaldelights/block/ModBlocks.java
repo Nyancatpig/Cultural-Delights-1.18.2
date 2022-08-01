@@ -35,10 +35,6 @@ public class ModBlocks {
     public static final RegistryObject<Block> AVOCADO_BUNDLE = registerBlock("avocado_bundle",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.PUMPKIN).noOcclusion()), FarmersDelight.CREATIVE_TAB, false, 0);
 
-    public static final RegistryObject<Block> BAMBOO_MAT = registerBlock("bamboo_mat",
-            () -> new BambooMatBlock(BlockBehaviour.Properties.copy(vectorwing.farmersdelight.common.registry.ModBlocks.CUTTING_BOARD.get())
-                    .noOcclusion()), FarmersDelight.CREATIVE_TAB, true, 200);
-
      public static final RegistryObject<Block> WILD_CUCUMBERS = registerBlock("wild_cucumbers",
             () -> new WildCropBlock(MobEffects.FIRE_RESISTANCE, 6, BlockBehaviour.Properties.copy(Blocks.TALL_GRASS), false),
              FarmersDelight.CREATIVE_TAB, false, 0);
@@ -84,9 +80,6 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> CUCUMBERS = registerBlockWithoutBlockItem("cucumbers",
             () -> new CucumbersBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noOcclusion()));
-
-    public static final RegistryObject<Block> WHITE_EGGPLANTS = registerBlockWithoutBlockItem("white_eggplants",
-            () -> new WhiteEggplantsBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noOcclusion()));
 
     public static final RegistryObject<Block> EGGPLANTS = registerBlockWithoutBlockItem("eggplants",
             () -> new EggplantsBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noOcclusion()));

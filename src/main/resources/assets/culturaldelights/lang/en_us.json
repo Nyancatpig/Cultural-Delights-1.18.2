@@ -3,7 +3,6 @@
 
   "item.culturaldelights.cucumber_seeds": "Cucumber Seeds",
   "item.culturaldelights.eggplant_seeds": "Eggplant Seeds",
-  "item.culturaldelights.white_eggplant_seeds": "White Eggplant Seeds",
   "item.culturaldelights.corn_kernels": "Corn Kernels",
 
   "item.culturaldelights.avocado": "Avocado",
@@ -55,7 +54,6 @@
   "item.culturaldelights.calamari_maki": "Calamari Maki",
 
   "block.culturaldelights.avocado_bundle": "Avocado Bundle",
-  "block.culturaldelights.bamboo_mat": "Bamboo Mat",
   "block.culturaldelights.wild_cucumbers": "Wild Cucumbers",
   "block.culturaldelights.wild_corn": "Wild Corn",
   "block.culturaldelights.wild_eggplants": "Wild Eggplants",
@@ -70,7 +68,5 @@
   "block.culturaldelights.pickle_crate": "Pickle Crate",
   "block.culturaldelights.corn_cob_crate": "Corn Cob Crate",
   "block.culturaldelights.eggplant_crate": "Eggplant Crate",
-  "block.culturaldelights.white_eggplant_crate": "White Eggplant Crate",
-
-  "screen.culturaldelights.bamboo_mat": "Bamboo Mat"
+  "block.culturaldelights.white_eggplant_crate": "White Eggplant Crate"
 }

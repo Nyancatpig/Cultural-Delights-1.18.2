@@ -1,5 +1,5 @@
 {
-  "type": "culturaldelights:mat_rolling",
+  "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
       "item": "minecraft:dried_kelp"
@@ -17,7 +17,7 @@
       "item": "minecraft:pufferfish"
     }
   ],
-  "output": {
+  "result": {
     "item": "culturaldelights:pufferfish_nigiri",
     "count": 4
   }

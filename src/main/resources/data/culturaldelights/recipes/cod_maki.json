@@ -1,5 +1,5 @@
 {
-  "type": "culturaldelights:mat_rolling",
+  "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
       "item": "minecraft:dried_kelp"
@@ -17,7 +17,7 @@
       "tag": "forge:raw_fishes/cod"
     }
   ],
-  "output": {
+  "result": {
     "item": "culturaldelights:cod_maki",
     "count": 3
   }

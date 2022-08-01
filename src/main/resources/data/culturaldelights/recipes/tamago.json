@@ -1,5 +1,5 @@
 {
-  "type": "culturaldelights:mat_rolling",
+  "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
       "item": "minecraft:dried_kelp"
@@ -17,8 +17,8 @@
       "tag": "forge:cooked_eggs"
     }
   ],
-  "output": {
+  "result": {
     "item": "culturaldelights:tamago",
-    "count": 3
+    "count": 4
   }
 }

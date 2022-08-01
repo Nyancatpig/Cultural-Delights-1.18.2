@@ -27,10 +27,6 @@ public class ModItems {
             () -> new ItemNameBlockItem(ModBlocks.EGGPLANTS.get(),
                     new Item.Properties().tab(FarmersDelight.CREATIVE_TAB)));
 
-    public static final RegistryObject<Item> WHITE_EGGPLANT_SEEDS = ITEMS.register("white_eggplant_seeds",
-            () -> new ItemNameBlockItem(ModBlocks.WHITE_EGGPLANTS.get(),
-                    new Item.Properties().tab(FarmersDelight.CREATIVE_TAB)));
-
 
     //Foods
     public static final RegistryObject<Item> AVOCADO = ITEMS.register("avocado",
@@ -143,18 +139,6 @@ public class ModItems {
 
     public static final RegistryObject<Item> COD_MAKI = ITEMS.register("cod_maki",
             () -> new Item(new Item.Properties().tab(FarmersDelight.CREATIVE_TAB).food(ModFoods.COD_MAKI)));
-
-    public static final RegistryObject<Item> KOI_NIGIRI = ITEMS.register("koi_nigiri",
-            () -> new Item(new Item.Properties().tab(FarmersDelight.CREATIVE_TAB).food(ModFoods.KOI_NIGIRI)));
-
-    public static final RegistryObject<Item> LIONFISH_MAKI = ITEMS.register("lionfish_maki",
-            () -> new Item(new Item.Properties().tab(FarmersDelight.CREATIVE_TAB).food(ModFoods.LIONFISH_MAKI)));
-
-    public static final RegistryObject<Item> PERCH_NIGIRI = ITEMS.register("perch_nigiri",
-            () -> new Item(new Item.Properties().tab(FarmersDelight.CREATIVE_TAB).food(ModFoods.PERCH_NIGIRI)));
-
-    public static final RegistryObject<Item> PIKE_MAKI = ITEMS.register("pike_maki",
-            () -> new Item(new Item.Properties().tab(FarmersDelight.CREATIVE_TAB).food(ModFoods.PIKE_MAKI)));
 
     public static final RegistryObject<Item> PUFFERFISH_NIGIRI = ITEMS.register("pufferfish_nigiri",
             () -> new Item(new Item.Properties().tab(FarmersDelight.CREATIVE_TAB).food(ModFoods.PUFFERFISH_NIGIRI)));

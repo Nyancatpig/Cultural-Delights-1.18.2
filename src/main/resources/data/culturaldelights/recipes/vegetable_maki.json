@@ -1,5 +1,5 @@
 {
-  "type": "culturaldelights:mat_rolling",
+  "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
       "item": "minecraft:dried_kelp"
@@ -8,17 +8,17 @@
       "item": "farmersdelight:cooked_rice"
     },
     {
-      "tag": "culturaldelights:avocados"
+      "tag": "culturaldelights:cucumbers"
     },
     {
-      "tag": "culturaldelights:cucumbers"
+      "tag": "culturaldelights:avocados"
     },
     {
       "item": "minecraft:carrot"
     }
   ],
-  "output": {
+  "result": {
     "item": "culturaldelights:vegetable_maki",
-    "count": 3
+    "count": 4
   }
 }

@@ -4,9 +4,6 @@ import com.mojang.logging.LogUtils;
 import com.ncpbails.culturaldelights.block.ModBlocks;
 import com.ncpbails.culturaldelights.block.entity.ModBlockEntities;
 import com.ncpbails.culturaldelights.item.ModItems;
-import com.ncpbails.culturaldelights.recipe.ModRecipes;
-import com.ncpbails.culturaldelights.screen.BambooMatScreen;
-import com.ncpbails.culturaldelights.screen.ModMenuTypes;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
@@ -48,8 +45,6 @@ public class CulturalDelights
         ModItems.register(eventBus);
         ModBlocks.register(eventBus);
         ModBlockEntities.register(eventBus);
-        ModMenuTypes.register(eventBus);
-        ModRecipes.register(eventBus);
 
         eventBus.addListener(this::setup);
         eventBus.addListener(this::clientSetup);
@@ -58,7 +53,6 @@ public class CulturalDelights
     }
 
     private void clientSetup(final FMLClientSetupEvent event) {
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.BAMBOO_MAT.get(), RenderType.cutoutMipped());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.WILD_CUCUMBERS.get(), RenderType.cutoutMipped());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.WILD_CORN.get(), RenderType.cutoutMipped());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.WILD_EGGPLANTS.get(), RenderType.cutoutMipped());
@@ -67,12 +61,9 @@ public class CulturalDelights
         //ItemBlockRenderTypes.setRenderLayer(ModBlocks.AVOCADO_PIT.get(), RenderType.cutoutMipped());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.CUCUMBERS.get(), RenderType.cutoutMipped());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.EGGPLANTS.get(), RenderType.cutoutMipped());
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.WHITE_EGGPLANTS.get(), RenderType.cutoutMipped());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.CORN.get(), RenderType.cutoutMipped());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.CORN_UPPER.get(), RenderType.cutoutMipped());
 
-
-        MenuScreens.register(ModMenuTypes.BAMBOO_MAT_MENU.get(), BambooMatScreen::new);
 
         //ModItemProperties.addCustomItemProperties();
     }
@@ -95,7 +86,6 @@ public class CulturalDelights
         ComposterBlock.COMPOSTABLES.put(ModItems.CUCUMBER_SEEDS.get(), 0.3F);
         ComposterBlock.COMPOSTABLES.put(ModItems.CORN_KERNELS.get(), 0.3F);
         ComposterBlock.COMPOSTABLES.put(ModItems.EGGPLANT_SEEDS.get(), 0.3F);
-        ComposterBlock.COMPOSTABLES.put(ModItems.WHITE_EGGPLANT_SEEDS.get(), 0.3F);
         ComposterBlock.COMPOSTABLES.put(ModBlocks.AVOCADO_PIT.get(), 0.3F);
 
         // 50% chance
