@@ -53,7 +53,7 @@ public class ModBlocks {
                 @Override public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return 60; }
                 @Override public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return 30; }
       @Nullable @Override public BlockState getToolModifiedState(BlockState state, Level world, BlockPos pos, Player player, ItemStack stack, ToolAction toolAction){
-                    if(stack.getItem() instanceof AxeItem) { return Blocks.JUNGLE_LOG.defaultBlockState().setValue(AXIS, state.getValue(AXIS)); }
+                    if(stack.getItem() instanceof AxeItem) { return Blocks.STRIPPED_JUNGLE_LOG.defaultBlockState().setValue(AXIS, state.getValue(AXIS)); }
                     return super.getToolModifiedState(state, world, pos, player, stack, toolAction); }
             }, FarmersDelight.CREATIVE_TAB, true, 300);
 
@@ -63,7 +63,7 @@ public class ModBlocks {
                 @Override public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return 60; }
                 @Override public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return 30; }
       @Nullable @Override public BlockState getToolModifiedState(BlockState state, Level world, BlockPos pos, Player player, ItemStack stack, ToolAction toolAction){
-                    if(stack.getItem() instanceof AxeItem) { return Blocks.JUNGLE_WOOD.defaultBlockState().setValue(AXIS, state.getValue(AXIS)); }
+                    if(stack.getItem() instanceof AxeItem) { return Blocks.STRIPPED_JUNGLE_WOOD.defaultBlockState().setValue(AXIS, state.getValue(AXIS)); }
                     return super.getToolModifiedState(state, world, pos, player, stack, toolAction); }
                 }, FarmersDelight.CREATIVE_TAB, true, 300);
 

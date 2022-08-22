@@ -8,17 +8,17 @@
       "item": "farmersdelight:cooked_rice"
     },
     {
-      "item": "minecraft:pufferfish"
+      "tag": "forge:raw_fishes/salmon"
     },
     {
-      "item": "minecraft:pufferfish"
+      "tag": "forge:raw_fishes/salmon"
     },
     {
-      "item": "minecraft:pufferfish"
+      "tag": "forge:raw_fishes/salmon"
     }
   ],
   "result": {
-    "item": "culturaldelights:pufferfish_nigiri",
-    "count": 4
+    "item": "culturaldelights:salmon_roll",
+    "count": 5
   }
 }

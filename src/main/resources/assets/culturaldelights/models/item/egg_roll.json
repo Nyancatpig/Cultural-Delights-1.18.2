@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "culturaldelights:item/salmon_nigiri"
+    "layer0": "culturaldelights:item/egg_roll"
   }
 }

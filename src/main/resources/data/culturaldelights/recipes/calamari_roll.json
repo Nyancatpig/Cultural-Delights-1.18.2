@@ -11,14 +11,14 @@
       "tag": "culturaldelights:cucumbers"
     },
     {
-      "tag": "culturaldelights:avocados"
+      "item": "culturaldelights:raw_calamari"
     },
     {
-      "item": "minecraft:carrot"
+      "item": "culturaldelights:raw_calamari"
     }
   ],
   "result": {
-    "item": "culturaldelights:vegetable_maki",
-    "count": 4
+    "item": "culturaldelights:calamari_roll",
+    "count": 2
   }
 }

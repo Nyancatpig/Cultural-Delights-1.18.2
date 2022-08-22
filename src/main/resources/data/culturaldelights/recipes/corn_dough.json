@@ -1,18 +1,19 @@
 {
-  "group": "bamboo_mat",
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "sss",
-    " b "
-  ],
-  "key": {
-    "s": {
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:water_bucket"
+    },
+    {
       "tag": "forge:crops/corn"
     },
-    "b": {
-      "item": "minecraft:water_bucket"
+    {
+      "tag": "forge:crops/corn"
+    },
+    {
+      "tag": "forge:crops/corn"
     }
-  },
+  ],
   "result": {
     "item": "culturaldelights:corn_dough",
     "count": 3

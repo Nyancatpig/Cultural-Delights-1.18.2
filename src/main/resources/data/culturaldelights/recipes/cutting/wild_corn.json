@@ -13,8 +13,7 @@
       "item": "culturaldelights:corn_kernels"
     },
     {
-      "item": "minecraft:wheat_seeds",
-      "count": 2,
+      "item": "culturaldelights:corn_kernels",
       "chance": 0.5
     }
   ]

@@ -13,6 +13,9 @@
       "item": "culturaldelights:cucumber"
     },
     {
+      "item": "culturaldelights:cucumber_seeds"
+    },
+    {
       "item": "minecraft:yellow_dye",
       "count": 2,
       "chance": 0.5

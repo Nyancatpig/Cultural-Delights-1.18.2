@@ -13,8 +13,15 @@
       "item": "culturaldelights:corn_kernels"
     },
     {
-      "item": "farmersdelight:straw",
+      "item": "culturaldelights:corn_kernels"
+    },
+    {
+      "item": "culturaldelights:corn_kernels",
       "chance": 0.5
+    },
+    {
+      "item": "farmersdelight:straw",
+      "chance": 1
     }
   ]
 }

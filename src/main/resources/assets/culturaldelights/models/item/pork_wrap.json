@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "culturaldelights:item/onigiri"
+    "layer0": "culturaldelights:item/pork_wrap"
   }
 }

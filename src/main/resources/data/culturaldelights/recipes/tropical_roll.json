@@ -8,17 +8,17 @@
       "item": "farmersdelight:cooked_rice"
     },
     {
-      "tag": "forge:raw_fishes/salmon"
+      "item": "minecraft:tropical_fish"
     },
     {
-      "tag": "forge:raw_fishes/salmon"
+      "item": "minecraft:tropical_fish"
     },
     {
-      "tag": "forge:raw_fishes/salmon"
+      "item": "minecraft:tropical_fish"
     }
   ],
   "result": {
-    "item": "culturaldelights:salmon_nigiri",
-    "count": 5
+    "item": "culturaldelights:tropical_roll",
+    "count": 6
   }
 }
