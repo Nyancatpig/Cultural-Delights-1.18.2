@@ -1,9 +1,8 @@
 {
-  "itemGroup.culturalTab": "Cultural Delights",
-
   "item.culturaldelights.cucumber_seeds": "Cucumber Seeds",
   "item.culturaldelights.eggplant_seeds": "Eggplant Seeds",
   "item.culturaldelights.corn_kernels": "Corn Kernels",
+  "block.culturaldelights.exotic_roll_medley": "Exotic Roll Medley",
 
   "item.culturaldelights.avocado": "Avocado",
   "item.culturaldelights.cut_avocado": "Cut Avocado",
@@ -44,9 +43,9 @@
   "item.culturaldelights.fish_taco": "Fish Taco",
 
   "item.culturaldelights.chicken_roll": "Chicken Roll",
-  "item.culturaldelights.vegetable_roll": "Vegetable Roll",
+  "item.culturaldelights.midori_roll": "Midori Roll",
   "item.culturaldelights.chicken_roll_slice": "Chicken Roll Slice",
-  "item.culturaldelights.vegetable_roll_slice": "Vegetable Roll Slice",
+  "item.culturaldelights.midori_roll_slice": "Midori Roll Slice",
   "item.culturaldelights.pufferfish_roll": "Pufferfish Roll",
   "item.culturaldelights.tropical_roll": "Tropical Roll",
   "item.culturaldelights.rice_ball": "Rice Ball",

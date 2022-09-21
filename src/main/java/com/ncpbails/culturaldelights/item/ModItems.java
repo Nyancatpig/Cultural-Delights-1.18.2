@@ -140,11 +140,11 @@ public class ModItems {
     public static final RegistryObject<Item> FISH_TACO = ITEMS.register("fish_taco",
             () -> new Item(new Item.Properties().tab(FarmersDelight.CREATIVE_TAB).food(ModFoods.FISH_TACO)));
 
-    public static final RegistryObject<Item> VEGETABLE_ROLL = ITEMS.register("vegetable_roll",
-            () -> new Item(new Item.Properties().tab(FarmersDelight.CREATIVE_TAB).food(ModFoods.VEGETABLE_ROLL)));
+    public static final RegistryObject<Item> MIDORI_ROLL = ITEMS.register("midori_roll",
+            () -> new Item(new Item.Properties().tab(FarmersDelight.CREATIVE_TAB).food(ModFoods.MIDORI_ROLL)));
 
-    public static final RegistryObject<Item> VEGETABLE_ROLL_SLICE = ITEMS.register("vegetable_roll_slice",
-            () -> new Item(new Item.Properties().tab(FarmersDelight.CREATIVE_TAB).food(ModFoods.VEGETABLE_ROLL_SLICE)));
+    public static final RegistryObject<Item> MIDORI_ROLL_SLICE = ITEMS.register("midori_roll_slice",
+            () -> new Item(new Item.Properties().tab(FarmersDelight.CREATIVE_TAB).food(ModFoods.MIDORI_ROLL_SLICE)));
 
     public static final RegistryObject<Item> EGG_ROLL = ITEMS.register("egg_roll",
             () -> new Item(new Item.Properties().tab(FarmersDelight.CREATIVE_TAB).food(ModFoods.EGG_ROLL)));

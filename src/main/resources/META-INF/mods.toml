@@ -29,7 +29,7 @@ displayName="Cultural Delights" #mandatory
 # A file name (in the root of the mod JAR) containing a logo for display
 logoFile="logo.png" #optional
 # A text field displayed in the mod UI
-credits="Art: NCP Bails, Bagels, AshesUponAshes, Tio_Madre | Translations: Akaman1114, BlackJamesYT" #optional
+credits="Developer: NCP Bails | Art: NCP Bails, Bagels, AshesUponAshes, Tio_Madre | Translations: Akaman1114, BlackJamesYT" #optional
 # A text field displayed in the mod UI
 authors="NCP Bails" #optional
 # The description text for the mod (multi line!) (#mandatory)
@@ -57,6 +57,6 @@ description="A Farmer's Delight addon that adds food systems from around the wor
 [[dependencies.culturaldelights]]
     modId = "farmersdelight"
     mandatory = true
-    versionRange = "[0.6.0,)"
+    versionRange = "[1.2.0,)"
     ordering = "AFTER"
     side = "BOTH"

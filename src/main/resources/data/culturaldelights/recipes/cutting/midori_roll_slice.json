@@ -2,7 +2,7 @@
   "type": "farmersdelight:cutting",
   "ingredients": [
     {
-      "item": "culturaldelights:chicken_roll"
+      "item": "culturaldelights:midori_roll"
     }
   ],
   "tool": {
@@ -10,7 +10,7 @@
   },
   "result": [
     {
-      "item": "culturaldelights:vegetable_roll_slice",
+      "item": "culturaldelights:midori_roll_slice",
       "count": 3
     }
   ]
