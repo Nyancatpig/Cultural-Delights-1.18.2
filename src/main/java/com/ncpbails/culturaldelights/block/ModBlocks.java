@@ -36,15 +36,15 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.PUMPKIN).noOcclusion()), FarmersDelight.CREATIVE_TAB, false, 0);
 
      public static final RegistryObject<Block> WILD_CUCUMBERS = registerBlock("wild_cucumbers",
-            () -> new WildCropBlock(MobEffects.FIRE_RESISTANCE, 6, BlockBehaviour.Properties.copy(Blocks.TALL_GRASS), false),
+            () -> new WildCropBlock(MobEffects.FIRE_RESISTANCE, 6, BlockBehaviour.Properties.copy(Blocks.TALL_GRASS)),
              FarmersDelight.CREATIVE_TAB, false, 0);
 
     public static final RegistryObject<Block> WILD_CORN = registerBlock("wild_corn",
-            () -> new WildCropBlock(MobEffects.HUNGER, 6, BlockBehaviour.Properties.copy(Blocks.TALL_GRASS), false),
+            () -> new WildCropBlock(MobEffects.HUNGER, 6, BlockBehaviour.Properties.copy(Blocks.TALL_GRASS)),
             FarmersDelight.CREATIVE_TAB, false, 0);
 
     public static final RegistryObject<Block> WILD_EGGPLANTS = registerBlock("wild_eggplants",
-            () -> new WildCropBlock(MobEffects.DAMAGE_BOOST, 6, BlockBehaviour.Properties.copy(Blocks.TALL_GRASS), false),
+            () -> new WildCropBlock(MobEffects.DAMAGE_BOOST, 6, BlockBehaviour.Properties.copy(Blocks.TALL_GRASS)),
             FarmersDelight.CREATIVE_TAB, false, 0);
 
     public static final RegistryObject<Block> AVOCADO_LOG = registerBlock("avocado_log",

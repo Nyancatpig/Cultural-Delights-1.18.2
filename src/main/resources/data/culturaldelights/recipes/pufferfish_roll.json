@@ -2,13 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "minecraft:dried_kelp"
-    },
-    {
       "item": "farmersdelight:cooked_rice"
-    },
-    {
-      "item": "minecraft:pufferfish"
     },
     {
       "item": "minecraft:pufferfish"
@@ -19,6 +13,6 @@
   ],
   "result": {
     "item": "culturaldelights:pufferfish_roll",
-    "count": 4
+    "count": 2
   }
 }

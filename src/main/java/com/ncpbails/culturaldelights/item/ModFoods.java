@@ -33,15 +33,15 @@ public class ModFoods {
     public static final FoodProperties SMOKED_CUT_EGGPLANT = (new FoodProperties.Builder()).nutrition(4).saturationMod(0.4F).fast().build();
 
     //SUSHI
-    public static final FoodProperties VEGETABLE_ROLL = (new FoodProperties.Builder()).nutrition(3).saturationMod(0.4F).fast().build();
+    public static final FoodProperties VEGETABLE_ROLL = (new FoodProperties.Builder()).nutrition(7).saturationMod(0.4F).build();
+    public static final FoodProperties VEGETABLE_ROLL_SLICE = (new FoodProperties.Builder()).nutrition(3).saturationMod(0.2F).fast().build();
     public static final FoodProperties EGG_ROLL = (new FoodProperties.Builder()).nutrition(3).saturationMod(0.5F).fast().build();
-    public static final FoodProperties CHICKEN_ROLL = (new FoodProperties.Builder()).nutrition(10).saturationMod(1F).fast().build();
-    public static final FoodProperties COD_ROLL = (new FoodProperties.Builder()).nutrition(3).saturationMod(0.5F).fast().build();
-    public static final FoodProperties PUFFERFISH_ROLL = (new FoodProperties.Builder()).nutrition(3).saturationMod(0.5F)
+    public static final FoodProperties CHICKEN_ROLL = (new FoodProperties.Builder()).nutrition(8).saturationMod(0.8F).build();
+    public static final FoodProperties CHICKEN_ROLL_SLICE = (new FoodProperties.Builder()).nutrition(4).saturationMod(0.4F).fast().build();
+    public static final FoodProperties PUFFERFISH_ROLL = (new FoodProperties.Builder()).nutrition(7).saturationMod(0.6F)
             .effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 200, 0), 1.0F)
             .effect(() -> new MobEffectInstance(MobEffects.HUNGER, 200, 1), 1.0F).fast().build();
-    public static final FoodProperties SALMON_ROLL = (new FoodProperties.Builder()).nutrition(3).saturationMod(0.6F).fast().build();
-    public static final FoodProperties TROPICAL_ROLL = (new FoodProperties.Builder()).nutrition(1).saturationMod(0.15F).fast().build();
+    public static final FoodProperties TROPICAL_ROLL = (new FoodProperties.Builder()).nutrition(7).saturationMod(0.6F).fast().build();
     public static final FoodProperties RICE_BALL = (new FoodProperties.Builder()).nutrition(3).saturationMod(0.5F).fast().build();
     public static final FoodProperties CALAMARI_ROLL = (new FoodProperties.Builder()).nutrition(4).saturationMod(0.5F).fast().build();
 

@@ -1,24 +1,25 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "ingredients": [
-    {
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " ! ",
+    "@?@",
+    "###"
+  ],
+  "key": {
+    "#": {
       "item": "minecraft:dried_kelp"
     },
-    {
+    "@": {
       "item": "farmersdelight:cooked_rice"
     },
-    {
-      "tag": "culturaldelights:cucumbers"
-    },
-    {
+    "?": {
       "tag": "culturaldelights:avocados"
     },
-    {
-      "item": "minecraft:carrot"
+    "!": {
+      "tag": "culturaldelights:cucumbers"
     }
-  ],
+  },
   "result": {
-    "item": "culturaldelights:vegetable_roll",
-    "count": 4
+    "item": "culturaldelights:vegetable_roll"
   }
 }

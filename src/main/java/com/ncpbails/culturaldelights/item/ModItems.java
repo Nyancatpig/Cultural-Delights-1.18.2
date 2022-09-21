@@ -8,6 +8,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import vectorwing.farmersdelight.FarmersDelight;
+import vectorwing.farmersdelight.common.item.KelpRollItem;
 
 public class ModItems {
 
@@ -142,20 +143,20 @@ public class ModItems {
     public static final RegistryObject<Item> VEGETABLE_ROLL = ITEMS.register("vegetable_roll",
             () -> new Item(new Item.Properties().tab(FarmersDelight.CREATIVE_TAB).food(ModFoods.VEGETABLE_ROLL)));
 
+    public static final RegistryObject<Item> VEGETABLE_ROLL_SLICE = ITEMS.register("vegetable_roll_slice",
+            () -> new Item(new Item.Properties().tab(FarmersDelight.CREATIVE_TAB).food(ModFoods.VEGETABLE_ROLL_SLICE)));
+
     public static final RegistryObject<Item> EGG_ROLL = ITEMS.register("egg_roll",
             () -> new Item(new Item.Properties().tab(FarmersDelight.CREATIVE_TAB).food(ModFoods.EGG_ROLL)));
 
     public static final RegistryObject<Item> CHICKEN_ROLL = ITEMS.register("chicken_roll",
-            () -> new Item(new Item.Properties().tab(FarmersDelight.CREATIVE_TAB).food(ModFoods.CHICKEN_ROLL)));
+            () -> new KelpRollItem(new Item.Properties().tab(FarmersDelight.CREATIVE_TAB).food(ModFoods.CHICKEN_ROLL)));
 
-    public static final RegistryObject<Item> COD_ROLL = ITEMS.register("cod_roll",
-            () -> new Item(new Item.Properties().tab(FarmersDelight.CREATIVE_TAB).food(ModFoods.COD_ROLL)));
+    public static final RegistryObject<Item> CHICKEN_ROLL_SLICE = ITEMS.register("chicken_roll_slice",
+            () -> new KelpRollItem(new Item.Properties().tab(FarmersDelight.CREATIVE_TAB).food(ModFoods.CHICKEN_ROLL_SLICE)));
 
     public static final RegistryObject<Item> PUFFERFISH_ROLL = ITEMS.register("pufferfish_roll",
             () -> new Item(new Item.Properties().tab(FarmersDelight.CREATIVE_TAB).food(ModFoods.PUFFERFISH_ROLL)));
-
-    public static final RegistryObject<Item> SALMON_ROLL = ITEMS.register("salmon_roll",
-            () -> new Item(new Item.Properties().tab(FarmersDelight.CREATIVE_TAB).food(ModFoods.SALMON_ROLL)));
 
     public static final RegistryObject<Item> TROPICAL_ROLL = ITEMS.register("tropical_roll",
             () -> new Item(new Item.Properties().tab(FarmersDelight.CREATIVE_TAB).food(ModFoods.TROPICAL_ROLL)));
